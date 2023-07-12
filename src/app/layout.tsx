@@ -27,10 +27,8 @@ const roboto = Roboto({
 
 export default function RootLayout({
   children,
-  home,
 }: {
   children: React.ReactNode;
-  home?: boolean;
 }) {
   return (
     <html lang="en">
