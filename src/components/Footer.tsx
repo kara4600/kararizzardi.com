@@ -10,7 +10,7 @@ function Copyright() {
       {'Copyright © '}
       <Link
         href="/"
-        style={{ textDecoration: 'none', color: '#9DBBE9' }}
+        style={{ textDecoration: 'none', color: '#2196f3' }}
       >
         Kara Rizzardi
       </Link>{' '}
@@ -26,7 +26,10 @@ export default function Footer() {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '100vh',
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        bottom: 0,
       }}
     >
       <Box
@@ -39,11 +42,6 @@ export default function Footer() {
           width: '100%',
           mt: 'auto',
           backgroundColor: '#FAFAF4',
-          // #283044
-          //   backgroundColor: (theme) =>
-          //     theme.palette.mode === 'light'
-          //       ? theme.palette.grey[200]
-          //       : theme.palette.grey[800],
         }}
       >
         <Container maxWidth="sm">
@@ -56,7 +54,9 @@ export default function Footer() {
             <Link
               href="https://github.com/kara4600/kararizzardi.com"
               target={'_blank'}
-              style={{ color: '#9DBBE9' }}
+              style={{
+                color: '#2196f3',
+              }}
             >
               the source code
             </Link>{' '}
