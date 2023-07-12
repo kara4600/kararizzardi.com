@@ -20,7 +20,7 @@ export default function Header() {
           href={'/'}
           style={{ textDecoration: 'none', color: '#000' }}
         >
-          <Typography variant="h5" fontWeight={550} mr={'1%'}>
+          <Typography variant="h5" fontWeight={550}>
             KRizzardi
           </Typography>
         </Link>

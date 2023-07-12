@@ -2,6 +2,7 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
+import Link from 'next/link';
 
 export default function HomePage() {
   return (
@@ -11,9 +12,8 @@ export default function HomePage() {
         direction={'column'}
         width={'70%'}
         marginX={'auto'}
-        mt={'1%'}
       >
-        <Fade in timeout={2000}>
+        <Fade in timeout={1750}>
           <Grid
             container
             item
@@ -23,8 +23,23 @@ export default function HomePage() {
             width={{ xs: '100%', sm: '60%' }}
           >
             <Typography fontWeight={'600'} variant="h4">
-              Hello, I'm Kara Rizzardi. I'm an electrical engineering & computer
-              science major at UC Berkeley.
+              Hello, I'm Kara Rizzardi. <br /> I'm an electrical
+              engineering & computer science major at UC Berkeley.
+              <Link
+                href={'https://youtu.be/mfebpLfAt8g?t=2'}
+                target="_blank"
+                style={{ textDecoration: 'none' }}
+              >
+                <Typography
+                  fontWeight={'600'}
+                  variant="h6"
+                  style={{
+                    color: '#2196f3',
+                  }}
+                >
+                  <sup>(go bears!)</sup>
+                </Typography>
+              </Link>
             </Typography>
           </Grid>
         </Fade>
