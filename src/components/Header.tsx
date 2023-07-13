@@ -16,10 +16,7 @@ export default function Header() {
         marginX={'auto'}
         mt={'1%'}
       >
-        <Link
-          href={'/'}
-          style={{ textDecoration: 'none', color: '#000' }}
-        >
+        <Link href={'/'} style={{ textDecoration: 'none', color: '#000' }}>
           <Typography variant="h5" fontWeight={550}>
             KRizzardi
           </Typography>
@@ -27,8 +24,10 @@ export default function Header() {
         <Link href={'/'}>
           <Button>Home</Button>
         </Link>
-        <Button>Resume{<LaunchIcon />}</Button>
-        <Link href={'https://github.com/kara4600/'}>
+        <Link href={'/Kara_Rizzardi_Resume.pdf'} target="_blank">
+          <Button>Resume{<LaunchIcon />}</Button>
+        </Link>
+        <Link href={'https://github.com/kara4600/'} target="_blank">
           <Button>Github {<LaunchIcon />}</Button>
         </Link>
       </Grid>

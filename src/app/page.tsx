@@ -7,12 +7,7 @@ import Link from 'next/link';
 export default function HomePage() {
   return (
     <div>
-      <Grid
-        container
-        direction={'column'}
-        width={'70%'}
-        marginX={'auto'}
-      >
+      <Grid container direction={'column'} width={'70%'} marginX={'auto'}>
         <Fade in timeout={1750}>
           <Grid
             container
@@ -23,8 +18,8 @@ export default function HomePage() {
             width={{ xs: '100%', sm: '60%' }}
           >
             <Typography fontWeight={'600'} variant="h4">
-              Hello, I'm Kara Rizzardi. <br /> I'm an electrical
-              engineering & computer science major at UC Berkeley.
+              Hello, I'm Kara Rizzardi. <br /> I'm an electrical engineering &
+              computer science major at UC Berkeley.{' '}
               <Link
                 href={'https://youtu.be/mfebpLfAt8g?t=2'}
                 target="_blank"
@@ -33,8 +28,13 @@ export default function HomePage() {
                 <Typography
                   fontWeight={'600'}
                   variant="h6"
-                  style={{
+                  sx={{
                     color: '#2196f3',
+                    '&:hover': {
+                      color: '#3B7EA1',
+                      textDecoration: 'underline',
+                    },
+                    display: 'inline-block',
                   }}
                 >
                   <sup>(go bears!)</sup>
