@@ -6,7 +6,21 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from '@mui/material/Link';
-import LaunchIcon from '@mui/icons-material/Launch';
+
+const LINKS = [
+  { text: 'Home', href: '/', target: '_self' },
+  {
+    text: 'Resume',
+    href: '/Kara_Rizzardi_Resume.pdf',
+    target: '_blank',
+  },
+  {
+    text: 'Github',
+    href: 'https://github.com/kara4600/',
+    target: '_blank',
+  },
+  { text: 'About', href: '/about', target: '_self' },
+];
 
 export default function MobileNavMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -39,29 +53,11 @@ export default function MobileNavMenu() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <Link color="inherit" underline="none" href={'/'}>
-          <MenuItem onClick={handleClose}>Home</MenuItem>
-        </Link>
-        <Link
-          color="inherit"
-          underline="none"
-          href={'/Kara_Rizzardi_Resume.pdf'}
-          target={'_blank'}
-        >
-          <MenuItem onClick={handleClose}>
-            Resume {<LaunchIcon fontSize="small" />}
-          </MenuItem>
-        </Link>
-        <Link
-          color="inherit"
-          underline="none"
-          href={'https://github.com/kara4600/kararizzardi.com'}
-          target={'_blank'}
-        >
-          <MenuItem onClick={handleClose}>
-            Github {<LaunchIcon fontSize="small" />}
-          </MenuItem>
-        </Link>
+        {LINKS.map(({ text, href, target }) => (
+          <Link href={href} target={target} color={'inherit'} underline="none">
+            <MenuItem onClick={handleClose}>{text}</MenuItem>
+          </Link>
+        ))}
       </Menu>
     </div>
   );

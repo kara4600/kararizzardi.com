@@ -3,7 +3,21 @@ import MobileNavMenu from './MobileNavMenu';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import LaunchIcon from '@mui/icons-material/Launch';
+
+const LINKS = [
+  { text: 'Home', href: '/', target: '_self' },
+  {
+    text: 'Resume',
+    href: '/Kara_Rizzardi_Resume.pdf',
+    target: '_blank',
+  },
+  {
+    text: 'Github',
+    href: 'https://github.com/kara4600/',
+    target: '_blank',
+  },
+  { text: 'About', href: '/about', target: '_self' },
+];
 
 export default function Header() {
   return (
@@ -24,15 +38,11 @@ export default function Header() {
             KRizzardi
           </Typography>
         </Link>
-        <Link href={'/'}>
-          <Button>Home</Button>
-        </Link>
-        <Link href={'/Kara_Rizzardi_Resume.pdf'} target="_blank">
-          <Button>Resume{<LaunchIcon />}</Button>
-        </Link>
-        <Link href={'https://github.com/kara4600/'} target="_blank">
-          <Button>Github {<LaunchIcon />}</Button>
-        </Link>
+        {LINKS.map(({ text, href, target }) => (
+          <Link href={href} target={target}>
+            <Button>{text}</Button>
+          </Link>
+        ))}
       </Grid>
       <Grid
         container
