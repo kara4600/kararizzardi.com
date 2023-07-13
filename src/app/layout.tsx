@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Box from '@mui/material/Box';
 
 const title = 'Krizzardi';
 const description = 'Kara Rizzardi - kararizzardi.com';
@@ -33,9 +34,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Header />
-        <ThemeRegistry>{children}</ThemeRegistry>
-        <Footer />
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            minHeight: '100vh',
+          }}
+        >
+          <Header />
+          <ThemeRegistry>{children}</ThemeRegistry>
+          <Footer />
+        </Box>
       </body>
     </html>
   );

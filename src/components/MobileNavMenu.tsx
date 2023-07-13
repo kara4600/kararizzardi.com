@@ -23,7 +23,9 @@ const LINKS = [
 ];
 
 export default function MobileNavMenu() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(
+    null
+  );
   const open = Boolean(anchorEl);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -53,8 +55,14 @@ export default function MobileNavMenu() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        {LINKS.map(({ text, href, target }) => (
-          <Link href={href} target={target} color={'inherit'} underline="none">
+        {LINKS.map(({ text, href, target }, key) => (
+          <Link
+            href={href}
+            target={target}
+            color={'inherit'}
+            underline="none"
+            key={key}
+          >
             <MenuItem onClick={handleClose}>{text}</MenuItem>
           </Link>
         ))}

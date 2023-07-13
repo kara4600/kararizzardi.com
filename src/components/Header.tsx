@@ -33,13 +33,16 @@ export default function Header() {
           width: '70%',
         }}
       >
-        <Link href={'/'} style={{ textDecoration: 'none', color: '#000' }}>
+        <Link
+          href={'/'}
+          style={{ textDecoration: 'none', color: '#000' }}
+        >
           <Typography variant="h5" fontWeight={550}>
             KRizzardi
           </Typography>
         </Link>
-        {LINKS.map(({ text, href, target }) => (
-          <Link href={href} target={target}>
+        {LINKS.map(({ text, href, target }, key) => (
+          <Link href={href} target={target} key={key}>
             <Button>{text}</Button>
           </Link>
         ))}
@@ -47,7 +50,11 @@ export default function Header() {
       <Grid
         container
         item
-        sx={{ display: { xs: 'flex', sm: 'none' }, mt: '3%', direction: 'row' }}
+        sx={{
+          display: { xs: 'flex', sm: 'none' },
+          mt: '3%',
+          direction: 'row',
+        }}
       >
         <MobileNavMenu />
       </Grid>
