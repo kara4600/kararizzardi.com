@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import MobileNavMenu from './MobileNavMenu';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -10,11 +11,13 @@ export default function Header() {
       <Grid
         container
         item
-        sx={{ display: { xs: 'none', sm: 'flex' } }}
-        direction={'row'}
-        width={'70%'}
-        marginX={'auto'}
-        mt={'1%'}
+        sx={{
+          display: { xs: 'none', sm: 'flex' },
+          mt: '1%',
+          mx: 'auto',
+          direction: 'row',
+          width: '70%',
+        }}
       >
         <Link href={'/'} style={{ textDecoration: 'none', color: '#000' }}>
           <Typography variant="h5" fontWeight={550}>
@@ -30,6 +33,13 @@ export default function Header() {
         <Link href={'https://github.com/kara4600/'} target="_blank">
           <Button>Github {<LaunchIcon />}</Button>
         </Link>
+      </Grid>
+      <Grid
+        container
+        item
+        sx={{ display: { xs: 'flex', sm: 'none' }, mt: '3%', direction: 'row' }}
+      >
+        <MobileNavMenu />
       </Grid>
     </div>
   );
