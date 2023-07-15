@@ -11,13 +11,12 @@ services:
       - ./next-app/src:/app/src
       - ./next-app/public:/app/public
     restart: always
-    ports:
-      - 3000:3000
-    networks:
-      - my_network
 
-# Define a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
-networks:
-  my_network:
-    external: true
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: dev.Dockerfile
+    ports:
+      - 80:80
+    restart: always

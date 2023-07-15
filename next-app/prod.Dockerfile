@@ -5,16 +5,10 @@ FROM base AS builder
 
 WORKDIR /app
 
-# Install dependencies based on the preferred package manager
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+# Install dependencies
+COPY package.json package-lock.json* ./
 # Omit --production flag for TypeScript devDependencies
-RUN \
-  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i; \
-  # Allow install without lockfile, so project works even without Node.js installed locally
-  else echo "Warning: Lockfile not found. It is recommended to commit lockfiles to version control." && yarn install; \
-  fi
+RUN npm ci
 
 COPY src ./src
 COPY public ./public
@@ -24,13 +18,8 @@ COPY tsconfig.json .
 # Uncomment the following line to disable telemetry at build time
 # ENV NEXT_TELEMETRY_DISABLED 1
 
-# Build Next.js based on the preferred package manager
-RUN \
-  if [ -f yarn.lock ]; then yarn build; \
-  elif [ -f package-lock.json ]; then npm run build; \
-  elif [ -f pnpm-lock.yaml ]; then pnpm build; \
-  else yarn build; \
-  fi
+# Build Next.js
+RUN npm run build
 
 # Step 2. Production image, copy all the files and run next
 FROM base AS runner
@@ -51,6 +40,6 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 # Uncomment the following line to disable telemetry at run time
 # ENV NEXT_TELEMETRY_DISABLED 1
 
-# Note: Don't expose ports here, Compose will handle that for us
+# Note: Don't expose ports here, Compose will handle that
 
 CMD ["node", "server.js"]

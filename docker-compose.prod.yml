@@ -6,14 +6,14 @@ services:
     build:
       context: ./next-app
       dockerfile: prod.Dockerfile
-    restart: always
-    ports:
-      - 3000:3000
-    networks:
-      - my_network
 
-# Define a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
-networks:
-  my_network:
-    external: true
+    restart: always
+
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: prod.Dockerfile
+    ports:
+      - 80:80
+    restart: always
