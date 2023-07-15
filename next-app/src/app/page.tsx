@@ -68,9 +68,8 @@ export default function HomePage() {
           >
             <Grid item>
               <Typography fontWeight={'600'} variant="h3">
-                Hi there, my name is Kara Rizzardi! <br /> I'm an
-                electrical engineering & computer science major at UC
-                Berkeley.{' '}
+                Hi there, my name is Kara Rizzardi! <br /> I'm an electrical
+                engineering & computer science major at UC Berkeley.{' '}
                 <Link
                   href={'https://youtu.be/mfebpLfAt8g?t=2'}
                   target="_blank"
@@ -95,11 +94,7 @@ export default function HomePage() {
             </Grid>
 
             <Grid container item mt={'10vh'} mr={'auto'}>
-              <Typography
-                fontWeight={'600'}
-                variant="h4"
-                gutterBottom
-              >
+              <Typography fontWeight={'600'} variant="h4" gutterBottom>
                 More about me
               </Typography>
 
@@ -115,21 +110,19 @@ export default function HomePage() {
                 <Box sx={{ display: 'flex', flexDirection: 'row' }}>
                   <CardContent>
                     <Typography fontWeight={600} gutterBottom>
-                      I'm a 4th year undergraduate student at UC
-                      Berkeley studying Electrical Engineering &
-                      Computer Science. I enjoy learning about + using
-                      new technologies and have an interest in
-                      fullstack development. Lately I've been feeling
-                      extra passionate about frontend development and
+                      I'm a 4th year undergraduate student at UC Berkeley
+                      studying Electrical Engineering & Computer Science. I
+                      enjoy learning about + using new technologies and have an
+                      interest in fullstack development. Lately I've been
+                      feeling extra passionate about frontend development and
                       creating good UI/UX experiences.
                     </Typography>
                     <Typography fontWeight={600}>
-                      Most of my free time is spent doing yoga
-                      (vinyasa, not bikram) and making music. I played
-                      the clarinet for 6 years, but nowadays I like to
-                      focus on guitar & piano. I have a youtube
-                      channel where I like to post covers and original
-                      compositions for fun.
+                      Most of my free time is spent doing yoga (vinyasa, not
+                      bikram) and making music. I played the clarinet for 6
+                      years, but nowadays I like to focus on guitar & piano. I
+                      have a youtube channel where I like to post covers and
+                      original compositions for fun.
                     </Typography>
                   </CardContent>
                 </Box>
@@ -137,11 +130,7 @@ export default function HomePage() {
             </Grid>
 
             <Grid container item mt={'10vh'} mr={'auto'}>
-              <Typography
-                fontWeight={'600'}
-                variant="h4"
-                gutterBottom
-              >
+              <Typography fontWeight={'600'} variant="h4" gutterBottom>
                 My experience
               </Typography>
 
@@ -156,16 +145,16 @@ export default function HomePage() {
                 }}
               >
                 <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-                  <CardContent>
+                  <CardContent sx={{ display: { xs: 'none', sm: 'inline' } }}>
                     <Image
                       src="/keysight.png"
                       width={100}
                       height={100}
-                      alt="Picture of Keysight logo"
+                      alt="Company logo"
                     />
                   </CardContent>
                   <CardContent>
-                    <Typography component="div" variant="h5">
+                    <Typography component="div" variant="h5" fontWeight={600}>
                       Keysight Technologies
                     </Typography>
                     <Typography
@@ -183,35 +172,50 @@ export default function HomePage() {
                         listStylePosition: 'inside',
                       }}
                     >
-                      {KEYSIGHT_EXPERIENCE.map(
-                        ({ subheader, points }, key) => (
-                          <div>
-                            <ListSubheader
+                      {KEYSIGHT_EXPERIENCE.map(({ subheader, points }, key) => (
+                        <div>
+                          <ListSubheader
+                            disableGutters
+                            sx={{
+                              lineHeight: '24px',
+                              fontWeight: 600,
+                              fontSize: '16px',
+                              color: 'black',
+                              py: 1,
+                            }}
+                          >
+                            {subheader}
+                          </ListSubheader>
+                          {points.map((point) => (
+                            <ListItem
                               disableGutters
+                              disablePadding
                               sx={{
-                                lineHeight: '24px',
-                                fontSize: '16px',
-                                color: 'black',
-                                py: 1,
+                                display: 'list-item',
                               }}
                             >
-                              {subheader}
-                            </ListSubheader>
-                            {points.map((point) => (
-                              <ListItem
-                                disableGutters
-                                disablePadding
-                                sx={{
-                                  display: 'list-item',
-                                }}
-                              >
-                                {point}
-                              </ListItem>
-                            ))}
-                          </div>
-                        )
-                      )}
+                              {point}
+                            </ListItem>
+                          ))}
+                        </div>
+                      ))}
                     </List>
+                    <CardContent
+                      sx={{
+                        display: { sm: 'none' },
+                        width: 'fit-content',
+                        mx: 'auto',
+                      }}
+                    >
+                      {
+                        <Image
+                          src={'/keysight.png'}
+                          width={200}
+                          height={200}
+                          alt="Company logo"
+                        />
+                      }
+                    </CardContent>
                   </CardContent>
                 </Box>
               </Card>
@@ -226,16 +230,16 @@ export default function HomePage() {
                 }}
               >
                 <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-                  <CardContent>
+                  <CardContent sx={{ display: { xs: 'none', sm: 'inline' } }}>
                     <Image
                       src="/gwc.jpeg"
                       width={100}
                       height={100}
-                      alt="Picture of GWC logo"
+                      alt="Company logo"
                     />
                   </CardContent>
                   <CardContent>
-                    <Typography component="div" variant="h5">
+                    <Typography component="div" variant="h5" fontWeight={600}>
                       Girls Who Code
                     </Typography>
                     <Typography
@@ -253,35 +257,50 @@ export default function HomePage() {
                         listStylePosition: 'inside',
                       }}
                     >
-                      {GWC_EXPERIENCE.map(
-                        ({ subheader, points }, key) => (
-                          <div>
-                            <ListSubheader
+                      {GWC_EXPERIENCE.map(({ subheader, points }, key) => (
+                        <div>
+                          <ListSubheader
+                            disableGutters
+                            sx={{
+                              lineHeight: '24px',
+                              fontWeight: 600,
+                              fontSize: '16px',
+                              color: 'black',
+                              py: 1,
+                            }}
+                          >
+                            {subheader}
+                          </ListSubheader>
+                          {points.map((point) => (
+                            <ListItem
                               disableGutters
+                              disablePadding
                               sx={{
-                                lineHeight: '24px',
-                                fontSize: '16px',
-                                color: 'black',
-                                py: 1,
+                                display: 'list-item',
                               }}
                             >
-                              {subheader}
-                            </ListSubheader>
-                            {points.map((point) => (
-                              <ListItem
-                                disableGutters
-                                disablePadding
-                                sx={{
-                                  display: 'list-item',
-                                }}
-                              >
-                                {point}
-                              </ListItem>
-                            ))}
-                          </div>
-                        )
-                      )}
+                              {point}
+                            </ListItem>
+                          ))}
+                        </div>
+                      ))}
                     </List>
+                    <CardContent
+                      sx={{
+                        display: { sm: 'none' },
+                        width: 'fit-content',
+                        mx: 'auto',
+                      }}
+                    >
+                      {
+                        <Image
+                          src={'/gwc.jpeg'}
+                          width={200}
+                          height={200}
+                          alt="Company logo"
+                        />
+                      }
+                    </CardContent>
                   </CardContent>
                 </Box>
               </Card>
@@ -320,20 +339,13 @@ export default function HomePage() {
                         listStylePosition: 'inside',
                       }}
                     >
-                      <Typography
-                        variant="h6"
-                        fontWeight={600}
-                        mb={'2vh'}
-                      >
-                        To read more about my experience & skills,
-                        check out my resume below!
+                      <Typography variant="h6" fontWeight={600} mb={'2vh'}>
+                        To read more about my experience & skills, check out my
+                        resume below!
                       </Typography>
                     </List>
                     <Box sx={{ width: 'fit-content', mx: 'auto' }}>
-                      <Link
-                        href="/Kara_Rizzardi_Resume.pdf"
-                        target="_blank"
-                      >
+                      <Link href="/Kara_Rizzardi_Resume.pdf" target="_blank">
                         <Button
                           variant="contained"
                           size="large"
