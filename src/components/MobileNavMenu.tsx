@@ -19,7 +19,7 @@ const LINKS = [
     href: 'https://github.com/kara4600/',
     target: '_blank',
   },
-  { text: 'About', href: '/about', target: '_self' },
+  { text: 'Projects', href: '/projects', target: '_self' },
 ];
 
 export default function MobileNavMenu() {

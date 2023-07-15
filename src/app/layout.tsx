@@ -6,7 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Box from '@mui/material/Box';
 
-const title = 'Krizzardi';
+const title = 'Kara Rizzardi';
 const description = 'Kara Rizzardi - kararizzardi.com';
 const image = '/favicon.ico';
 

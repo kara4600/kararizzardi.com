@@ -16,7 +16,7 @@ const LINKS = [
     href: 'https://github.com/kara4600/',
     target: '_blank',
   },
-  { text: 'About', href: '/about', target: '_self' },
+  { text: 'Projects', href: '/projects', target: '_self' },
 ];
 
 export default function Header() {
@@ -25,6 +25,7 @@ export default function Header() {
       <Grid
         container
         item
+        columnSpacing={1.5}
         sx={{
           display: { xs: 'none', sm: 'flex' },
           mt: '1%',
@@ -33,18 +34,22 @@ export default function Header() {
           width: '70%',
         }}
       >
-        <Link
-          href={'/'}
-          style={{ textDecoration: 'none', color: '#000' }}
-        >
-          <Typography variant="h5" fontWeight={550}>
-            KRizzardi
-          </Typography>
-        </Link>
-        {LINKS.map(({ text, href, target }, key) => (
-          <Link href={href} target={target} key={key}>
-            <Button>{text}</Button>
+        <Grid item>
+          <Link
+            href={'/'}
+            style={{ textDecoration: 'none', color: '#000' }}
+          >
+            <Typography variant="h5" fontWeight={550}>
+              KRizzardi
+            </Typography>
           </Link>
+        </Grid>
+        {LINKS.map(({ text, href, target }, key) => (
+          <Grid item>
+            <Link href={href} target={target} key={key}>
+              <Button>{text}</Button>
+            </Link>
+          </Grid>
         ))}
       </Grid>
       <Grid
