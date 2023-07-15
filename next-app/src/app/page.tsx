@@ -1,0 +1,355 @@
+import * as React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import Grid from '@mui/material/Grid';
+import Fade from '@mui/material/Fade';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListSubheader from '@mui/material/ListSubheader';
+import { Button } from '@mui/material';
+
+const KEYSIGHT_EXPERIENCE = [
+  {
+    subheader:
+      'Fullstack developer on Agile software development team (order management system)',
+    points: [
+      'Worked closely with stakeholders and project owner to design UI/UX using Figma',
+      'Built out responsive frontend using React and Material UI',
+      'Reduced Webpack bundle size by 48%',
+      'Optimized Rest API resulting in a 54% speed increase',
+      'Designed authentication & authorization system flow',
+      'Setup SSO authentication using Microsoft Azure',
+    ],
+  },
+  {
+    subheader:
+      'Backend developer on Agile software development team (automated server provisioning)',
+    points: [
+      'Developed automation tooling to improve deployment processes',
+      'Wrote and maintained unit tests',
+      'Wrote Chef Inspec scripts to audit & test infrastructure',
+      'Exposure to computer networking, cloud platforms, and virtualization technologies',
+    ],
+  },
+];
+
+const GWC_EXPERIENCE = [
+  {
+    subheader: 'Frontend developer on a team with 12 other girls',
+    points: [
+      'Built website to support the community-led "Keep Our Library Open" campaign to fight against the closure of our local library',
+      'Designed UI using Figma',
+      'Advocated for the importance of women in technology',
+    ],
+  },
+];
+
+export default function HomePage() {
+  return (
+    <div>
+      <Grid
+        container
+        direction={'column'}
+        width={{ xs: '85vw', sm: '70%' }}
+        marginX={'auto'}
+      >
+        <Fade in timeout={1750}>
+          <Grid
+            container
+            item
+            justifyContent={'center'}
+            marginX={'auto'}
+            marginY={{ xs: '50px', sm: '100px' }}
+            width={{ xs: '100%', sm: '60%' }}
+          >
+            <Grid item>
+              <Typography fontWeight={'600'} variant="h3">
+                Hi there, my name is Kara Rizzardi! <br /> I'm an
+                electrical engineering & computer science major at UC
+                Berkeley.{' '}
+                <Link
+                  href={'https://youtu.be/mfebpLfAt8g?t=2'}
+                  target="_blank"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <Typography
+                    fontWeight={'600'}
+                    variant="h6"
+                    sx={{
+                      color: '#2196f3',
+                      '&:hover': {
+                        color: '#3B7EA1',
+                        textDecoration: 'underline',
+                      },
+                      display: 'inline-block',
+                    }}
+                  >
+                    <sup>(go bears!)</sup>
+                  </Typography>
+                </Link>
+              </Typography>
+            </Grid>
+
+            <Grid container item mt={'10vh'} mr={'auto'}>
+              <Typography
+                fontWeight={'600'}
+                variant="h4"
+                gutterBottom
+              >
+                More about me
+              </Typography>
+
+              <Card
+                elevation={3}
+                sx={{
+                  display: 'flex',
+                  padding: '2vh',
+                  borderRadius: 2,
+                  width: '100%',
+                }}
+              >
+                <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+                  <CardContent>
+                    <Typography fontWeight={600} gutterBottom>
+                      I'm a 4th year undergraduate student at UC
+                      Berkeley studying Electrical Engineering &
+                      Computer Science. I enjoy learning about + using
+                      new technologies and have an interest in
+                      fullstack development. Lately I've been feeling
+                      extra passionate about frontend development and
+                      creating good UI/UX experiences.
+                    </Typography>
+                    <Typography fontWeight={600}>
+                      Most of my free time is spent doing yoga
+                      (vinyasa, not bikram) and making music. I played
+                      the clarinet for 6 years, but nowadays I like to
+                      focus on guitar & piano. I have a youtube
+                      channel where I like to post covers and original
+                      compositions for fun.
+                    </Typography>
+                  </CardContent>
+                </Box>
+              </Card>
+            </Grid>
+
+            <Grid container item mt={'10vh'} mr={'auto'}>
+              <Typography
+                fontWeight={'600'}
+                variant="h4"
+                gutterBottom
+              >
+                My experience
+              </Typography>
+
+              <Card
+                elevation={3}
+                sx={{
+                  display: 'flex',
+                  padding: '2vh',
+                  borderRadius: 2,
+                  width: '100%',
+                  mb: '4vh',
+                }}
+              >
+                <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+                  <CardContent>
+                    <Image
+                      src="/keysight.png"
+                      width={100}
+                      height={100}
+                      alt="Picture of Keysight logo"
+                    />
+                  </CardContent>
+                  <CardContent>
+                    <Typography component="div" variant="h5">
+                      Keysight Technologies
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      color="text.secondary"
+                      component="div"
+                    >
+                      Software Engineer Intern
+                    </Typography>
+                    <List
+                      disablePadding
+                      sx={{
+                        ml: 0,
+                        listStyleType: 'disc',
+                        listStylePosition: 'inside',
+                      }}
+                    >
+                      {KEYSIGHT_EXPERIENCE.map(
+                        ({ subheader, points }, key) => (
+                          <div>
+                            <ListSubheader
+                              disableGutters
+                              sx={{
+                                lineHeight: '24px',
+                                fontSize: '16px',
+                                color: 'black',
+                                py: 1,
+                              }}
+                            >
+                              {subheader}
+                            </ListSubheader>
+                            {points.map((point) => (
+                              <ListItem
+                                disableGutters
+                                disablePadding
+                                sx={{
+                                  display: 'list-item',
+                                }}
+                              >
+                                {point}
+                              </ListItem>
+                            ))}
+                          </div>
+                        )
+                      )}
+                    </List>
+                  </CardContent>
+                </Box>
+              </Card>
+
+              <Card
+                elevation={3}
+                sx={{
+                  display: 'flex',
+                  padding: '2vh',
+                  borderRadius: 2,
+                  width: '100%',
+                }}
+              >
+                <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+                  <CardContent>
+                    <Image
+                      src="/gwc.jpeg"
+                      width={100}
+                      height={100}
+                      alt="Picture of GWC logo"
+                    />
+                  </CardContent>
+                  <CardContent>
+                    <Typography component="div" variant="h5">
+                      Girls Who Code
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      color="text.secondary"
+                      component="div"
+                    >
+                      Club Member
+                    </Typography>
+                    <List
+                      disablePadding
+                      sx={{
+                        ml: 0,
+                        listStyleType: 'disc',
+                        listStylePosition: 'inside',
+                      }}
+                    >
+                      {GWC_EXPERIENCE.map(
+                        ({ subheader, points }, key) => (
+                          <div>
+                            <ListSubheader
+                              disableGutters
+                              sx={{
+                                lineHeight: '24px',
+                                fontSize: '16px',
+                                color: 'black',
+                                py: 1,
+                              }}
+                            >
+                              {subheader}
+                            </ListSubheader>
+                            {points.map((point) => (
+                              <ListItem
+                                disableGutters
+                                disablePadding
+                                sx={{
+                                  display: 'list-item',
+                                }}
+                              >
+                                {point}
+                              </ListItem>
+                            ))}
+                          </div>
+                        )
+                      )}
+                    </List>
+                  </CardContent>
+                </Box>
+              </Card>
+
+              <Typography
+                fontWeight={'600'}
+                variant="h4"
+                mt={'4vh'}
+                gutterBottom
+              >
+                Resume
+              </Typography>
+              <Card
+                elevation={3}
+                sx={{
+                  display: 'flex',
+                  padding: '2vh',
+                  borderRadius: 2,
+                  width: '100%',
+                  mb: '4vh',
+                }}
+              >
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}
+                >
+                  <CardContent sx={{ width: '100%' }}>
+                    <List
+                      disablePadding
+                      sx={{
+                        ml: 0,
+                        listStyleType: 'disc',
+                        listStylePosition: 'inside',
+                      }}
+                    >
+                      <Typography
+                        variant="h6"
+                        fontWeight={600}
+                        mb={'2vh'}
+                      >
+                        To read more about my experience & skills,
+                        check out my resume below!
+                      </Typography>
+                    </List>
+                    <Box sx={{ width: 'fit-content', mx: 'auto' }}>
+                      <Link
+                        href="/Kara_Rizzardi_Resume.pdf"
+                        target="_blank"
+                      >
+                        <Button
+                          variant="contained"
+                          size="large"
+                          sx={{ bgcolor: '#2196f3' }}
+                        >
+                          Resume
+                        </Button>
+                      </Link>
+                    </Box>
+                  </CardContent>
+                </Box>
+              </Card>
+            </Grid>
+          </Grid>
+        </Fade>
+      </Grid>
+    </div>
+  );
+}
