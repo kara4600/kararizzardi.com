@@ -17,8 +17,6 @@ services:
     build:
       context: ./nginx
       dockerfile: dev.Dockerfile
-    volumes:
-      - /etc/letsencrypt/live/kararizzardi.com:/etc/nginx/ssl:ro
     ports:
       - 80:80
       - 443:443
