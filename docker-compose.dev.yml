@@ -17,6 +17,15 @@ services:
     build:
       context: ./nginx
       dockerfile: dev.Dockerfile
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./certbot/www:/var/www/certbot/:ro
     ports:
       - 80:80
+      - 443:443
     restart: always
+
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
