@@ -6,7 +6,6 @@ services:
     build:
       context: ./next-app
       dockerfile: prod.Dockerfile
-
     restart: always
 
   nginx:
@@ -14,6 +13,10 @@ services:
     build:
       context: ./nginx
       dockerfile: prod.Dockerfile
+    volumes:
+      - ../keys/fullchain.pem:/etc/nginx/fullchain.pem:ro
+      - ../keys/privkey.pem:/etc/nginx/privkey.pem:ro
     ports:
       - 80:80
-    restart: always
+      - 443:443
+    restart: unless-stopped
