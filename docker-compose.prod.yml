@@ -6,7 +6,6 @@ services:
     build:
       context: ./next-app
       dockerfile: prod.Dockerfile
-
     restart: always
 
   nginx:

@@ -6,7 +6,6 @@ services:
     build:
       context: ./next-app
       dockerfile: dev.Dockerfile
-
     volumes:
       - ./next-app/src:/app/src
       - ./next-app/public:/app/public
@@ -19,5 +18,4 @@ services:
       dockerfile: dev.Dockerfile
     ports:
       - 80:80
-      - 443:443
-    restart: always
+    restart: unless-stopped
