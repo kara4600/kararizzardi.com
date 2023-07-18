@@ -15,8 +15,8 @@ services:
       context: ./nginx
       dockerfile: prod.Dockerfile
     volumes:
-      - ../kararizzardi/keys/fullchain.pem:/etc/nginx/fullchain.pem:ro
-      - ../kararizzardi/keys/privkey.pem:/etc/nginx/privkey.pem:ro
+      - ../keys/fullchain.pem:/etc/nginx/fullchain.pem:ro
+      - ../keys/privkey.pem:/etc/nginx/privkey.pem:ro
     ports:
       - 80:80
       - 443:443
