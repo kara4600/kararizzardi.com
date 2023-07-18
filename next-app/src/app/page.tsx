@@ -10,7 +10,7 @@ import CardContent from '@mui/material/CardContent';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListSubheader from '@mui/material/ListSubheader';
-import { Button } from '@mui/material';
+import Button from '@mui/material/Button';
 
 const KEYSIGHT_EXPERIENCE = [
   {
@@ -167,9 +167,7 @@ export default function HomePage() {
                     <List
                       disablePadding
                       sx={{
-                        ml: 0,
                         listStyleType: 'disc',
-                        listStylePosition: 'inside',
                       }}
                     >
                       {KEYSIGHT_EXPERIENCE.map(({ subheader, points }, key) => (
@@ -192,6 +190,8 @@ export default function HomePage() {
                               disablePadding
                               sx={{
                                 display: 'list-item',
+                                mb: '0.5vh',
+                                ml: '1em',
                               }}
                             >
                               {point}
@@ -252,9 +252,7 @@ export default function HomePage() {
                     <List
                       disablePadding
                       sx={{
-                        ml: 0,
                         listStyleType: 'disc',
-                        listStylePosition: 'inside',
                       }}
                     >
                       {GWC_EXPERIENCE.map(({ subheader, points }, key) => (
@@ -277,6 +275,8 @@ export default function HomePage() {
                               disablePadding
                               sx={{
                                 display: 'list-item',
+                                mb: '0.5vh',
+                                ml: '1em',
                               }}
                             >
                               {point}
