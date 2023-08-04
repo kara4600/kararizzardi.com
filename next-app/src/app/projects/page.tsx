@@ -6,7 +6,6 @@ import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
 import List from '@mui/material/List';
 import Image from 'next/image';
-import { WidthFull } from '@mui/icons-material';
 
 const PROJECT_EXPERIENCE = [
   {
@@ -93,7 +92,9 @@ export default function Projects() {
                 }}
               >
                 <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-                  <CardContent sx={{ display: { xs: 'none', sm: 'inline' } }}>
+                  <CardContent
+                    sx={{ display: { xs: 'none', sm: 'inline' } }}
+                  >
                     {image && (
                       <Image
                         src={image}
@@ -112,7 +113,11 @@ export default function Projects() {
                         listStylePosition: 'inside',
                       }}
                     >
-                      <Typography component="div" fontWeight={600} variant="h5">
+                      <Typography
+                        component="div"
+                        fontWeight={600}
+                        variant="h5"
+                      >
                         {subheader}
                       </Typography>
                       <Typography
