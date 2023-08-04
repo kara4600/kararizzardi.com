@@ -9,6 +9,7 @@ import Link from '@mui/material/Link';
 
 const LINKS = [
   { text: 'Home', href: '/', target: '_self' },
+  { text: 'Projects', href: '/projects', target: '_self' },
   {
     text: 'Resume',
     href: '/Kara_Rizzardi_Resume.pdf',
@@ -19,7 +20,6 @@ const LINKS = [
     href: 'https://github.com/kara4600/',
     target: '_blank',
   },
-  { text: 'Projects', href: '/projects', target: '_self' },
 ];
 
 export default function MobileNavMenu() {

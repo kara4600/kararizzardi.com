@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 
 const LINKS = [
   { text: 'Home', href: '/', target: '_self' },
+  { text: 'Projects', href: '/projects', target: '_self' },
   {
     text: 'Resume',
     href: '/Kara_Rizzardi_Resume.pdf',
@@ -16,7 +17,6 @@ const LINKS = [
     href: 'https://github.com/kara4600/',
     target: '_blank',
   },
-  { text: 'Projects', href: '/projects', target: '_self' },
 ];
 
 export default function Header() {
@@ -35,7 +35,10 @@ export default function Header() {
         }}
       >
         <Grid item>
-          <Link href={'/'} style={{ textDecoration: 'none', color: '#000' }}>
+          <Link
+            href={'/'}
+            style={{ textDecoration: 'none', color: '#000' }}
+          >
             <Typography variant="h5" fontWeight={550}>
               KRizzardi
             </Typography>
@@ -60,7 +63,10 @@ export default function Header() {
       >
         <MobileNavMenu />
         <Grid item sx={{ ml: 'auto', mr: '4vw', my: 'auto' }}>
-          <Link href={'/'} style={{ textDecoration: 'none', color: '#000' }}>
+          <Link
+            href={'/'}
+            style={{ textDecoration: 'none', color: '#000' }}
+          >
             <Typography variant="h5" fontWeight={550}>
               KRizzardi
             </Typography>
