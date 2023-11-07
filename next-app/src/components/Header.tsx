@@ -13,6 +13,11 @@ const LINKS = [
     target: '_blank',
   },
   {
+    text: 'Linkedin',
+    href: 'https://www.linkedin.com/in/kararizzardi/',
+    target: '_blank',
+  },
+  {
     text: 'Github',
     href: 'https://github.com/kara4600/',
     target: '_blank',
@@ -35,10 +40,7 @@ export default function Header() {
         }}
       >
         <Grid item>
-          <Link
-            href={'/'}
-            style={{ textDecoration: 'none', color: '#000' }}
-          >
+          <Link href={'/'} style={{ textDecoration: 'none', color: '#000' }}>
             <Typography variant="h5" fontWeight={550}>
               KRizzardi
             </Typography>
@@ -63,10 +65,7 @@ export default function Header() {
       >
         <MobileNavMenu />
         <Grid item sx={{ ml: 'auto', mr: '4vw', my: 'auto' }}>
-          <Link
-            href={'/'}
-            style={{ textDecoration: 'none', color: '#000' }}
-          >
+          <Link href={'/'} style={{ textDecoration: 'none', color: '#000' }}>
             <Typography variant="h5" fontWeight={550}>
               KRizzardi
             </Typography>
