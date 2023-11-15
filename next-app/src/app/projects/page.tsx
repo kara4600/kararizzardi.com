@@ -9,14 +9,24 @@ import Image from 'next/image';
 
 const PROJECT_EXPERIENCE = [
   {
-    subheader: 'Kararizzardi.com',
-    tech: 'Typescript, Next.js, MUI, Docker, Nginx',
+    subheader: 'Berkeleytime',
+    tech: 'TypeScript, Vite, React, Redux, CSS',
     description:
-      "This is site you're on right now! My personal website uses Typescript with Next.js 13 and MUI. \
-      Docker is used to run the Next.js app and Nginx in separate containers with Docker Compose. \
-      Nginx serves as a reverse-proxy in front of the Next.js app and is also used to cache all the static assets; it passes all requests to the Next.js app's container. \
-      As of now, this project is deployed using an Ubuntu server on a DigitalOcean droplet (though I'm considering other options).",
-    image: '',
+      'From course planning to checking out grade distributions and viewing enrollement trends, \
+       Berkeleytime.com is a popular student-run academic planning website used by thousands of UC Berkeley students each semester. \
+       The project is maintained by student volunteers who want to help keep Berkeleytime alive.',
+    image: '/bt.png',
+  },
+  {
+    subheader: 'Project SIXT33N',
+    tech: 'NumPy, Jupyter Notebook, Arduino, Machine Learning',
+    description:
+      'SIXT33N is a voice-controlled robot car that can recognize 4 different voice commands. \
+      It can move forward, left or right based on those commands.\
+      It uses a microphone front end circuit integrated with processing integration and PCA classification through an Arduino. \
+      Controls were implemented by gathering open loop parameters and deriving a method to set desired eigenvalues that allow the car to automatically correct itself to drive straight and turn. \
+      This project taught me more about machine learning and hardware (I spent a lot of time debugging circuits).',
+    image: '/SIXT33N.jpg',
   },
   {
     subheader: 'Scheme Interpreter',
@@ -32,7 +42,7 @@ const PROJECT_EXPERIENCE = [
     subheader: 'Keep Our Library Open Campaign',
     tech: 'HTML, CSS, JavaScript',
     description:
-      'Built a static website to support the community-led movement fighting against the closure of our local library.',
+      'Built a static website to support & spread awareness for the community-led movement fighting against the closure of our local library.',
     image: '/gwc.jpeg',
   },
   {
@@ -44,15 +54,14 @@ const PROJECT_EXPERIENCE = [
     image: '/swift-og.png',
   },
   {
-    subheader: 'Project SIXT33N',
-    tech: 'NumPy, Jupyter Notebook, Arduino, Machine Learning',
+    subheader: 'Kararizzardi.com',
+    tech: 'Typescript, Next.js, MUI, Docker, Nginx',
     description:
-      'SIXT33N is a voice-controlled robot car that can recognize 4 different voice commands. \
-      It can move forward, left or right based on those commands.\
-      It uses a microphone front end circuit integrated with processing integration and PCA classification through an Arduino. \
-      Controls were implemented by gathering open loop parameters and deriving a method to set desired eigenvalues that allow the car to automatically correct itself to drive straight and turn. \
-      This project taught me more about machine learning and hardware (I spent a lot of time debugging circuits).',
-    image: '/SIXT33N.jpg',
+      "This is site you're on right now! My personal website uses Typescript with Next.js 13 and MUI. \
+      Docker is used to run the Next.js app and Nginx in separate containers with Docker Compose. \
+      Nginx serves as a reverse-proxy in front of the Next.js app and is also used to cache all the static assets; it passes all requests to the Next.js app's container. \
+      As of now, this project is deployed using an Ubuntu server on a DigitalOcean droplet (though I'm considering other options).",
+    image: '',
   },
 ];
 
@@ -92,9 +101,7 @@ export default function Projects() {
                 }}
               >
                 <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-                  <CardContent
-                    sx={{ display: { xs: 'none', sm: 'inline' } }}
-                  >
+                  <CardContent sx={{ display: { xs: 'none', sm: 'inline' } }}>
                     {image && (
                       <Image
                         src={image}
@@ -113,11 +120,7 @@ export default function Projects() {
                         listStylePosition: 'inside',
                       }}
                     >
-                      <Typography
-                        component="div"
-                        fontWeight={600}
-                        variant="h5"
-                      >
+                      <Typography component="div" fontWeight={600} variant="h5">
                         {subheader}
                       </Typography>
                       <Typography
