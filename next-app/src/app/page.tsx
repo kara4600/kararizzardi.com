@@ -15,6 +15,19 @@ import Button from '@mui/material/Button';
 const KEYSIGHT_EXPERIENCE = [
   {
     subheader:
+      'ServiceNow Developer',
+    points: [
+      'Developing a IT service chatbot using conversational AI and natural language understanding within ServiceNow',
+      'Implemented functionality for users to conversationally submit IT tickets, improving the user experience for thousands of end-users and supporting 14k+ tickets per month (custom process built using JavaScript)',
+      'Designed scalable API abstractions for our conversation platform, supporting all popular chat clients (MSTeams/Slack/Web)',
+      'Works with product management & cross functional teams to create technical solutions for desired user experiences',
+    ],
+  },
+]
+
+const KEYSIGHT_INTERN_EXPERIENCE = [
+  {
+    subheader:
       'Fullstack developer on Agile software development team (order management system)',
     points: [
       'Worked closely with stakeholders and project owner to design UI/UX using Figma',
@@ -68,8 +81,8 @@ export default function HomePage() {
           >
             <Grid item>
               <Typography fontWeight={'600'} variant="h3">
-                Hi there, my name is Kara Rizzardi! <br /> I'm an
-                electrical engineering & computer science major at UC
+                Hi there, my name is Kara Rizzardi! <br /> I'm a software engineer who
+                recently graduated from UC
                 Berkeley.{' '}
                 <Link
                   href={'https://youtu.be/mfebpLfAt8g?t=2'}
@@ -115,8 +128,8 @@ export default function HomePage() {
                 <Box sx={{ display: 'flex', flexDirection: 'row' }}>
                   <CardContent>
                     <Typography fontWeight={600} gutterBottom>
-                      I'm a 4th year undergraduate student at UC
-                      Berkeley studying Electrical Engineering &
+                      I'm a recent graduate from UC
+                      Berkeley who studied Electrical Engineering &
                       Computer Science. I enjoy learning about + using
                       new technologies and have an interest in
                       fullstack development. Lately I've been feeling
@@ -179,7 +192,7 @@ export default function HomePage() {
                       color="text.secondary"
                       component="div"
                     >
-                      Software Engineer Intern
+                      IT Software Engineer
                     </Typography>
                     <List
                       disablePadding
@@ -188,6 +201,100 @@ export default function HomePage() {
                       }}
                     >
                       {KEYSIGHT_EXPERIENCE.map(
+                        ({ subheader, points }, key) => (
+                          <div>
+                            <ListSubheader
+                              disableGutters
+                              sx={{
+                                lineHeight: '24px',
+                                fontWeight: 600,
+                                fontSize: '16px',
+                                color: 'black',
+                                py: 1,
+                              }}
+                            >
+                              {subheader}
+                            </ListSubheader>
+                            {points.map((point) => (
+                              <ListItem
+                                disableGutters
+                                disablePadding
+                                sx={{
+                                  display: 'list-item',
+                                  mb: '0.5vh',
+                                  ml: '1em',
+                                }}
+                              >
+                                {point}
+                              </ListItem>
+                            ))}
+                          </div>
+                        )
+                      )}
+                    </List>
+                    <CardContent
+                      sx={{
+                        display: { sm: 'none' },
+                        width: 'fit-content',
+                        mx: 'auto',
+                      }}
+                    >
+                      {
+                        <Image
+                          src={'/keysight.png'}
+                          width={200}
+                          height={200}
+                          alt="Company logo"
+                        />
+                      }
+                    </CardContent>
+                  </CardContent>
+                </Box>
+              </Card>
+
+              <Card
+                elevation={3}
+                sx={{
+                  display: 'flex',
+                  padding: '2vh',
+                  borderRadius: 2,
+                  width: '100%',
+                  mb: '4vh',
+                }}
+              >
+                <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+                  <CardContent
+                    sx={{ display: { xs: 'none', sm: 'inline' } }}
+                  >
+                    <Image
+                      src="/keysight.png"
+                      width={100}
+                      height={100}
+                      alt="Company logo"
+                    />
+                  </CardContent>
+                  <CardContent>
+                    <Typography
+                      component="div"
+                      variant="h5"
+                      fontWeight={600}
+                    >
+                      Keysight Technologies
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      color="text.secondary"
+                      component="div"
+                    >
+                      Software Engineer Intern
+                    </Typography>
+                    <List
+                      disablePadding
+                      sx={{
+                        listStyleType: 'disc',
+                      }}
+                    >
+                      {KEYSIGHT_INTERN_EXPERIENCE.map(
                         ({ subheader, points }, key) => (
                           <div>
                             <ListSubheader
