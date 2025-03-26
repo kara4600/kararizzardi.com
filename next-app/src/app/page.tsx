@@ -81,8 +81,8 @@ export default function HomePage() {
             <Grid item>
               <Typography fontWeight={'600'} variant="h3">
                 Hi there, my name is Kara Rizzardi! <br /> I'm a software
-                engineer who recently graduated from UC Berkeley.{' '}
-                <Link
+                engineer based in the SF Bay Area.{' '}
+                {/* <Link
                   href={'https://youtu.be/mfebpLfAt8g?t=2'}
                   target="_blank"
                   style={{ textDecoration: 'none' }}
@@ -101,7 +101,7 @@ export default function HomePage() {
                   >
                     <sup>(go bears!)</sup>
                   </Typography>
-                </Link>
+                </Link> */}
               </Typography>
             </Grid>
 
@@ -122,12 +122,32 @@ export default function HomePage() {
                 <Box sx={{ display: 'flex', flexDirection: 'row' }}>
                   <CardContent>
                     <Typography fontWeight={600} gutterBottom>
-                      I'm a recent graduate from UC Berkeley who studied
-                      Electrical Engineering & Computer Science. I enjoy
-                      learning about + using new technologies and have an
-                      interest in fullstack development. Lately I've been
-                      feeling extra passionate about frontend development and
-                      creating good UI/UX experiences.
+                      I'm a graduate from UC Berkeley{' '}
+                      <Link
+                        href={'https://youtu.be/mfebpLfAt8g?t=2'}
+                        target="_blank"
+                        style={{ textDecoration: 'none' }}
+                      >
+                        <Typography
+                          fontWeight={'600'}
+                          sx={{
+                            color: '#2196f3',
+                            '&:hover': {
+                              color: '#0c7cd5',
+                              textDecoration: 'underline',
+                            },
+                            display: 'inline-block',
+                          }}
+                        >
+                          (go bears!)
+                        </Typography>
+                      </Link>{' '}
+                      who studied Electrical Engineering & Computer Science. I
+                      enjoy learning about + using new technologies and have an
+                      interest in fullstack development. I'm extra passionate
+                      about frontend development and creating good UI/UX
+                      experiences along with building scalable, secure, and
+                      high-performance backend systems.
                     </Typography>
                     <Typography fontWeight={600}>
                       Most of my free time is spent doing yoga (vinyasa, not
