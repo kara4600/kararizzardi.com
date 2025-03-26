@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Link from 'next/link';
+import Link from '@mui/material/Link';
 import Image from 'next/image';
 import Grid from '@mui/material/Grid';
 import Fade from '@mui/material/Fade';
@@ -12,14 +12,33 @@ import ListItem from '@mui/material/ListItem';
 import ListSubheader from '@mui/material/ListSubheader';
 import Button from '@mui/material/Button';
 
+const PAYPAL_EXPERIENCE = [
+  {
+    subheader: 'Backend Developer',
+    points: [
+      'Developing payment processing solutions utilizing Java EE technologies (Java, application servers, servlet containers, JMS, JPA, Spring MVC, Hibernate)',
+    ],
+  },
+];
+
+const BERKELEYTIME_EXPERIENCE = [
+  {
+    subheader: 'Frontend Developer',
+    points: [
+      'Berkeleytime helps over 40,000 UC Berkeley students plan for course enrollment & check grade distributions',
+      'Redesigned berkeleytime.com homepage (viewed by 20k+ users per month) using React.js, CSS, and HTML',
+    ],
+  },
+];
+
 const KEYSIGHT_EXPERIENCE = [
   {
     subheader: 'ServiceNow Developer',
     points: [
-      'Developing a IT service chatbot using conversational AI and natural language understanding within ServiceNow',
+      'Developed an IT service chatbot using conversational AI and natural language understanding',
       'Implemented functionality for users to conversationally submit IT tickets, improving the user experience for thousands of end-users and supporting 14k+ tickets per month (custom process built using JavaScript)',
-      'Designed scalable API abstractions for our conversation platform, supporting all popular chat clients (MSTeams/Slack/Web)',
-      'Works with product management & cross functional teams to create technical solutions for desired user experiences',
+      'Acted as a Technical Architect & functional lead, providing direction to development team & assisting product owner in planning work to strategize & build out the product vision',
+      'Worked with product management & cross functional teams to define architectural visions that align business and IT strategies with software implementations',
     ],
   },
 ];
@@ -81,8 +100,8 @@ export default function HomePage() {
             <Grid item>
               <Typography fontWeight={'600'} variant="h3">
                 Hi there, my name is Kara Rizzardi! <br /> I'm a software
-                engineer who recently graduated from UC Berkeley.{' '}
-                <Link
+                engineer based in the SF Bay Area.{' '}
+                {/* <Link
                   href={'https://youtu.be/mfebpLfAt8g?t=2'}
                   target="_blank"
                   style={{ textDecoration: 'none' }}
@@ -101,7 +120,7 @@ export default function HomePage() {
                   >
                     <sup>(go bears!)</sup>
                   </Typography>
-                </Link>
+                </Link> */}
               </Typography>
             </Grid>
 
@@ -122,12 +141,28 @@ export default function HomePage() {
                 <Box sx={{ display: 'flex', flexDirection: 'row' }}>
                   <CardContent>
                     <Typography fontWeight={600} gutterBottom>
-                      I'm a recent graduate from UC Berkeley who studied
-                      Electrical Engineering & Computer Science. I enjoy
-                      learning about + using new technologies and have an
-                      interest in fullstack development. Lately I've been
-                      feeling extra passionate about frontend development and
-                      creating good UI/UX experiences.
+                      I'm a graduate from UC Berkeley{' '}
+                      <Link
+                        href={'https://youtu.be/mfebpLfAt8g?t=2'}
+                        target="_blank"
+                        style={{ textDecoration: 'none' }}
+                        sx={{
+                          color: '#2196f3',
+                          '&:hover': {
+                            color: '#0c7cd5',
+                            textDecoration: 'underline',
+                          },
+                          display: 'inline-block',
+                        }}
+                      >
+                        (go bears!)
+                      </Link>{' '}
+                      who studied Electrical Engineering & Computer Science. I
+                      enjoy learning about + using new technologies and have an
+                      interest in fullstack development. I'm extra passionate
+                      about frontend development and creating good UI/UX
+                      experiences along with building scalable, secure, and
+                      high-performance backend systems.
                     </Typography>
                     <Typography fontWeight={600}>
                       Most of my free time is spent doing yoga (vinyasa, not
@@ -145,6 +180,92 @@ export default function HomePage() {
               <Typography fontWeight={'600'} variant="h4" gutterBottom>
                 My experience
               </Typography>
+
+              <Card
+                elevation={3}
+                sx={{
+                  display: 'flex',
+                  padding: '2vh',
+                  borderRadius: 2,
+                  width: '100%',
+                  mb: '4vh',
+                }}
+              >
+                <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+                  <CardContent sx={{ display: { xs: 'none', sm: 'inline' } }}>
+                    <Image
+                      src="/paypal.png"
+                      width={100}
+                      height={100}
+                      alt="Company logo"
+                    />
+                  </CardContent>
+                  <CardContent>
+                    <Typography component="div" variant="h5" fontWeight={600}>
+                      PayPal
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      color="text.secondary"
+                      component="div"
+                    >
+                      Software Engineer I
+                    </Typography>
+                    <List
+                      disablePadding
+                      sx={{
+                        listStyleType: 'disc',
+                      }}
+                    >
+                      {PAYPAL_EXPERIENCE.map(({ subheader, points }, key) => (
+                        <div>
+                          <ListSubheader
+                            disableGutters
+                            sx={{
+                              lineHeight: '24px',
+                              fontWeight: 600,
+                              fontSize: '16px',
+                              color: 'black',
+                              py: 1,
+                            }}
+                          >
+                            {subheader}
+                          </ListSubheader>
+                          {points.map((point) => (
+                            <ListItem
+                              disableGutters
+                              disablePadding
+                              sx={{
+                                display: 'list-item',
+                                mb: '0.5vh',
+                                ml: '1em',
+                              }}
+                            >
+                              {point}
+                            </ListItem>
+                          ))}
+                        </div>
+                      ))}
+                    </List>
+                    <CardContent
+                      sx={{
+                        display: { sm: 'none' },
+                        width: 'fit-content',
+                        mx: 'auto',
+                      }}
+                    >
+                      {
+                        <Image
+                          src={'/keysight.png'}
+                          width={200}
+                          height={200}
+                          alt="Company logo"
+                        />
+                      }
+                    </CardContent>
+                  </CardContent>
+                </Box>
+              </Card>
 
               <Card
                 elevation={3}
@@ -183,6 +304,92 @@ export default function HomePage() {
                       }}
                     >
                       {KEYSIGHT_EXPERIENCE.map(({ subheader, points }, key) => (
+                        <div>
+                          <ListSubheader
+                            disableGutters
+                            sx={{
+                              lineHeight: '24px',
+                              fontWeight: 600,
+                              fontSize: '16px',
+                              color: 'black',
+                              py: 1,
+                            }}
+                          >
+                            {subheader}
+                          </ListSubheader>
+                          {points.map((point) => (
+                            <ListItem
+                              disableGutters
+                              disablePadding
+                              sx={{
+                                display: 'list-item',
+                                mb: '0.5vh',
+                                ml: '1em',
+                              }}
+                            >
+                              {point}
+                            </ListItem>
+                          ))}
+                        </div>
+                      ))}
+                    </List>
+                    <CardContent
+                      sx={{
+                        display: { sm: 'none' },
+                        width: 'fit-content',
+                        mx: 'auto',
+                      }}
+                    >
+                      {
+                        <Image
+                          src={'/keysight.png'}
+                          width={200}
+                          height={200}
+                          alt="Company logo"
+                        />
+                      }
+                    </CardContent>
+                  </CardContent>
+                </Box>
+              </Card>
+
+              <Card
+                elevation={3}
+                sx={{
+                  display: 'flex',
+                  padding: '2vh',
+                  borderRadius: 2,
+                  width: '100%',
+                  mb: '4vh',
+                }}
+              >
+                <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+                  <CardContent sx={{ display: { xs: 'none', sm: 'inline' } }}>
+                    <Image
+                      src="/bt.png"
+                      width={100}
+                      height={100}
+                      alt="Company logo"
+                    />
+                  </CardContent>
+                  <CardContent>
+                    <Typography component="div" variant="h5" fontWeight={600}>
+                      Berkeleytime
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      color="text.secondary"
+                      component="div"
+                    >
+                      Software Engineer
+                    </Typography>
+                    <List
+                      disablePadding
+                      sx={{
+                        listStyleType: 'disc',
+                      }}
+                    >
+                      {BERKELEYTIME_EXPERIENCE.map(({ subheader, points }, key) => (
                         <div>
                           <ListSubheader
                             disableGutters
