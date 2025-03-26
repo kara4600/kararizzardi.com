@@ -181,6 +181,7 @@ export default function HomePage() {
                 My experience
               </Typography>
 
+              {/* paypal */}
               <Card
                 elevation={3}
                 sx={{
@@ -254,9 +255,9 @@ export default function HomePage() {
                     >
                       {
                         <Image
-                          src={'/keysight.png'}
-                          width={200}
-                          height={200}
+                          src={'/paypal.png'}
+                          width={165}
+                          height={165}
                           alt="Company logo"
                         />
                       }
@@ -349,6 +350,7 @@ export default function HomePage() {
                 </Box>
               </Card>
 
+              {/* berkeleytime */}
               <Card
                 elevation={3}
                 sx={{
@@ -424,7 +426,7 @@ export default function HomePage() {
                     >
                       {
                         <Image
-                          src={'/keysight.png'}
+                          src={'/bt.png'}
                           width={200}
                           height={200}
                           alt="Company logo"
@@ -435,6 +437,7 @@ export default function HomePage() {
                 </Box>
               </Card>
 
+              {/* keys intern */}
               <Card
                 elevation={3}
                 sx={{
@@ -521,6 +524,7 @@ export default function HomePage() {
                 </Box>
               </Card>
 
+              {/* gwc */}
               <Card
                 elevation={3}
                 sx={{
