@@ -6,11 +6,14 @@ import Container from '@mui/material/Container';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary">
+    <Typography variant="body2">
       {'Copyright © '}
       <Link
         href="/"
-        style={{ textDecoration: 'none', color: '#2196f3' }}
+        style={{
+          textDecoration: 'none',
+          color: '#2196f3',
+        }}
       >
         Kara Rizzardi
       </Link>{' '}
@@ -30,7 +33,7 @@ export default function Footer() {
         mb: '-8px',
         width: '100%',
         mt: 'auto',
-        backgroundColor: '#FAFAF4',
+        color: 'secondary',
         position: 'sticky',
       }}
     >
@@ -38,7 +41,7 @@ export default function Footer() {
         <Typography
           variant="subtitle1"
           fontWeight={'500'}
-          color="text.secondary"
+          // color="text.secondary"
         >
           This custom site was built with ❤️ by me. Check out{' '}
           <Link

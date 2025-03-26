@@ -40,16 +40,27 @@ export default function Header() {
         }}
       >
         <Grid item>
-          <Link href={'/'} style={{ textDecoration: 'none', color: '#000' }}>
+          <Link href={'/'} style={{ textDecoration: 'none', color: '#f5a4f5' }}>
             <Typography variant="h5" fontWeight={550}>
-              KRizzardi
+              Kara Rizzardi
             </Typography>
           </Link>
         </Grid>
         {LINKS.map(({ text, href, target }, key) => (
           <Grid item>
             <Link href={href} target={target} key={key}>
-              <Button>{text}</Button>
+              <Button
+                sx={{
+                  color: '#ffffff', // White text color
+                  transition: 'opacity 0.3s, background-color 0.3s',
+                  '&:hover': {
+                    backgroundColor: '#d687d6',
+                    opacity: 1,
+                  },
+                }}
+              >
+                {text}
+              </Button>
             </Link>
           </Grid>
         ))}
@@ -67,7 +78,7 @@ export default function Header() {
         <Grid item sx={{ ml: 'auto', mr: '4vw', my: 'auto' }}>
           <Link href={'/'} style={{ textDecoration: 'none', color: '#000' }}>
             <Typography variant="h5" fontWeight={550}>
-              KRizzardi
+              Kara Rizzardi
             </Typography>
           </Link>
         </Grid>

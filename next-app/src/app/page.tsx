@@ -70,7 +70,7 @@ const KEYSIGHT_INTERN_EXPERIENCE = [
 
 const GWC_EXPERIENCE = [
   {
-    subheader: 'Frontend developer on a team with 12 other girls',
+    subheader: 'Frontend developer on a team with 12 other women',
     points: [
       'Built website to support the community-led "Keep Our Library Open" campaign to fight against the closure of our local library',
       'Designed UI using Figma',
@@ -219,18 +219,16 @@ export default function HomePage() {
                     >
                       {PAYPAL_EXPERIENCE.map(({ subheader, points }, key) => (
                         <div>
-                          <ListSubheader
-                            disableGutters
+                          <Typography
                             sx={{
                               lineHeight: '24px',
                               fontWeight: 600,
                               fontSize: '16px',
-                              color: 'black',
                               py: 1,
                             }}
                           >
                             {subheader}
-                          </ListSubheader>
+                          </Typography>
                           {points.map((point) => (
                             <ListItem
                               disableGutters
@@ -305,18 +303,16 @@ export default function HomePage() {
                     >
                       {KEYSIGHT_EXPERIENCE.map(({ subheader, points }, key) => (
                         <div>
-                          <ListSubheader
-                            disableGutters
+                          <Typography
                             sx={{
                               lineHeight: '24px',
                               fontWeight: 600,
                               fontSize: '16px',
-                              color: 'black',
                               py: 1,
                             }}
                           >
                             {subheader}
-                          </ListSubheader>
+                          </Typography>
                           {points.map((point) => (
                             <ListItem
                               disableGutters
@@ -389,35 +385,35 @@ export default function HomePage() {
                         listStyleType: 'disc',
                       }}
                     >
-                      {BERKELEYTIME_EXPERIENCE.map(({ subheader, points }, key) => (
-                        <div>
-                          <ListSubheader
-                            disableGutters
-                            sx={{
-                              lineHeight: '24px',
-                              fontWeight: 600,
-                              fontSize: '16px',
-                              color: 'black',
-                              py: 1,
-                            }}
-                          >
-                            {subheader}
-                          </ListSubheader>
-                          {points.map((point) => (
-                            <ListItem
-                              disableGutters
-                              disablePadding
+                      {BERKELEYTIME_EXPERIENCE.map(
+                        ({ subheader, points }, key) => (
+                          <div>
+                            <Typography
                               sx={{
-                                display: 'list-item',
-                                mb: '0.5vh',
-                                ml: '1em',
+                                lineHeight: '24px',
+                                fontWeight: 600,
+                                fontSize: '16px',
+                                py: 1,
                               }}
                             >
-                              {point}
-                            </ListItem>
-                          ))}
-                        </div>
-                      ))}
+                              {subheader}
+                            </Typography>
+                            {points.map((point) => (
+                              <ListItem
+                                disableGutters
+                                disablePadding
+                                sx={{
+                                  display: 'list-item',
+                                  mb: '0.5vh',
+                                  ml: '1em',
+                                }}
+                              >
+                                {point}
+                              </ListItem>
+                            ))}
+                          </div>
+                        )
+                      )}
                     </List>
                     <CardContent
                       sx={{
@@ -478,18 +474,16 @@ export default function HomePage() {
                       {KEYSIGHT_INTERN_EXPERIENCE.map(
                         ({ subheader, points }, key) => (
                           <div>
-                            <ListSubheader
-                              disableGutters
+                            <Typography
                               sx={{
                                 lineHeight: '24px',
                                 fontWeight: 600,
                                 fontSize: '16px',
-                                color: 'black',
                                 py: 1,
                               }}
                             >
                               {subheader}
-                            </ListSubheader>
+                            </Typography>
                             {points.map((point) => (
                               <ListItem
                                 disableGutters
@@ -564,18 +558,16 @@ export default function HomePage() {
                     >
                       {GWC_EXPERIENCE.map(({ subheader, points }, key) => (
                         <div>
-                          <ListSubheader
-                            disableGutters
+                          <Typography
                             sx={{
                               lineHeight: '24px',
                               fontWeight: 600,
                               fontSize: '16px',
-                              color: 'black',
                               py: 1,
                             }}
                           >
                             {subheader}
-                          </ListSubheader>
+                          </Typography>
                           {points.map((point) => (
                             <ListItem
                               disableGutters
@@ -650,7 +642,7 @@ export default function HomePage() {
                         <Button
                           variant="contained"
                           size="large"
-                          sx={{ bgcolor: '#2196f3' }}
+                          sx={{ color: '#ffffff', bgcolor: '#2196f3' }}
                         >
                           Resume
                         </Button>
@@ -703,7 +695,7 @@ export default function HomePage() {
                         <Button
                           variant="contained"
                           size="large"
-                          sx={{ bgcolor: '#2196f3' }}
+                          sx={{ color: '#ffffff', bgcolor: '#2196f3' }}
                         >
                           Projects
                         </Button>
