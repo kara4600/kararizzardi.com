@@ -76,7 +76,7 @@ export default function Header() {
       >
         <MobileNavMenu />
         <Grid item sx={{ ml: 'auto', mr: '4vw', my: 'auto' }}>
-          <Link href={'/'} style={{ textDecoration: 'none', color: '#000' }}>
+          <Link href={'/'} style={{ textDecoration: 'none', color: '#f5a4f5' }}>
             <Typography variant="h5" fontWeight={550}>
               Kara Rizzardi
             </Typography>
