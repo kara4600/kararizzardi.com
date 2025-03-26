@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import Link from 'next/link';
 import Link from '@mui/material/Link';
 import Image from 'next/image';
 import Grid from '@mui/material/Grid';
