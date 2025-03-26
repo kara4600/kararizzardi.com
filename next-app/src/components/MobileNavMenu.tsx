@@ -44,7 +44,7 @@ export default function MobileNavMenu() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        <MenuIcon />
+        <MenuIcon sx={{ color: '#d687d6' }} />
       </Button>
       <Menu
         id="basic-menu"
@@ -63,7 +63,16 @@ export default function MobileNavMenu() {
             underline="none"
             key={key}
           >
-            <MenuItem onClick={handleClose}>{text}</MenuItem>
+            <MenuItem
+              sx={{
+                color: '#000000',
+                '&:hover': { backgroundColor: '#f5a4f5' },
+                '&:active': { backgroundColor: '#f5a4f5', color: '#ffffff' },
+              }}
+              onClick={handleClose}
+            >
+              {text}
+            </MenuItem>
           </Link>
         ))}
       </Menu>
