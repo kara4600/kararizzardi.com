@@ -2,7 +2,15 @@ import { createTheme } from '@mui/material/styles';
 
 const defaultTheme = createTheme({
   palette: {
-    mode: 'light',
+    mode: 'dark',
+    background: {
+      default: '#111111',
+      paper: '#111100',
+    },
+    text: {
+      primary: '#ffffff',
+      secondary: '#abb7c7',
+    },
   },
   components: {
     MuiAlert: {
