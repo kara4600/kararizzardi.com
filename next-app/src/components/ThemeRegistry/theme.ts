@@ -4,8 +4,8 @@ const defaultTheme = createTheme({
   palette: {
     mode: 'dark',
     background: {
-      default: '#111111',
-      paper: '#111100',
+      default: '#121212',
+      paper: '#111111',
     },
     text: {
       primary: '#ffffff',
