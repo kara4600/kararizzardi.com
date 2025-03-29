@@ -126,7 +126,25 @@ export default function HomePage() {
 
             <Grid container item mt={'10vh'} mr={'auto'}>
               <Typography fontWeight={'600'} variant="h4" gutterBottom>
-                More about me
+                A{' '}
+                <Link
+                  href={
+                    'https://www.gnu.org/fun/jokes/10-kinds-of-people.en.html'
+                  }
+                  target="_blank"
+                  style={{ textDecoration: 'none' }}
+                  sx={{
+                    color: '#2196f3',
+                    '&:hover': {
+                      color: '#0c7cd5',
+                      textDecoration: 'underline',
+                    },
+                    display: 'inline-block',
+                  }}
+                >
+                  bit
+                </Link>{' '}
+                about me
               </Typography>
 
               <Card
@@ -165,11 +183,11 @@ export default function HomePage() {
                       high-performance backend systems.
                     </Typography>
                     <Typography fontWeight={600}>
-                      Most of my free time is spent doing yoga (vinyasa, not
-                      bikram) and making music. I played the clarinet for 6
-                      years, but nowadays I like to focus on guitar & piano. I
-                      have a youtube channel where I like to post covers and
-                      original compositions for fun.
+                      Most of my free time is spent doing hot yoga (vinyasa, not
+                      bikram), snowboarding, and making music. I played the
+                      clarinet for 6 years, but nowadays I like to focus on
+                      guitar & piano. I have a youtube channel where I like to
+                      post covers and original compositions for fun.
                     </Typography>
                   </CardContent>
                 </Box>
@@ -180,7 +198,6 @@ export default function HomePage() {
               <Typography fontWeight={'600'} variant="h4" gutterBottom>
                 My experience
               </Typography>
-
               {/* paypal */}
               <Card
                 elevation={3}
@@ -265,7 +282,6 @@ export default function HomePage() {
                   </CardContent>
                 </Box>
               </Card>
-
               <Card
                 elevation={3}
                 sx={{
@@ -349,7 +365,6 @@ export default function HomePage() {
                   </CardContent>
                 </Box>
               </Card>
-
               {/* berkeleytime */}
               <Card
                 elevation={3}
@@ -398,21 +413,49 @@ export default function HomePage() {
                                 py: 1,
                               }}
                             >
-                              {subheader}
+                              Frontend Developer
                             </Typography>
-                            {points.map((point) => (
-                              <ListItem
-                                disableGutters
-                                disablePadding
+                            <ListItem
+                              disableGutters
+                              disablePadding
+                              sx={{
+                                display: 'list-item',
+                                mb: '0.5vh',
+                                ml: '1em',
+                              }}
+                            >
+                              Berkeleytime helps over 40,000 UC Berkeley
+                              students plan for course enrollment & check grade
+                              distributions
+                            </ListItem>
+                            <ListItem
+                              disableGutters
+                              disablePadding
+                              sx={{
+                                display: 'list-item',
+                                mb: '0.5vh',
+                                ml: '1em',
+                              }}
+                            >
+                              Redesigned{' '}
+                              <Link
+                                href={'https://berkeleytime.com/'}
+                                target="_blank"
+                                style={{ textDecoration: 'none' }}
                                 sx={{
-                                  display: 'list-item',
-                                  mb: '0.5vh',
-                                  ml: '1em',
+                                  color: '#2196f3',
+                                  '&:hover': {
+                                    color: '#0c7cd5',
+                                    textDecoration: 'underline',
+                                  },
+                                  display: 'inline-block',
                                 }}
                               >
-                                {point}
-                              </ListItem>
-                            ))}
+                                berkeleytime.com
+                              </Link>{' '}
+                              homepage (viewed by 20k+ users per month) using
+                              React.js, CSS, and HTML
+                            </ListItem>
                           </div>
                         )
                       )}
@@ -436,7 +479,6 @@ export default function HomePage() {
                   </CardContent>
                 </Box>
               </Card>
-
               {/* keys intern */}
               <Card
                 elevation={3}
@@ -523,7 +565,6 @@ export default function HomePage() {
                   </CardContent>
                 </Box>
               </Card>
-
               {/* gwc */}
               <Card
                 elevation={3}
@@ -607,7 +648,6 @@ export default function HomePage() {
                   </CardContent>
                 </Box>
               </Card>
-
               <Typography fontWeight={'600'} variant="h4" mt={'4vh'}>
                 Resume
               </Typography>
@@ -655,7 +695,6 @@ export default function HomePage() {
                   </CardContent>
                 </Box>
               </Card>
-
               <Typography
                 fontWeight={'600'}
                 variant="h4"
@@ -708,6 +747,105 @@ export default function HomePage() {
                   </CardContent>
                 </Box>
               </Card>
+              <Grid
+                container
+                item
+                mt={'10vh'}
+                mr={'auto'}
+                sx={{ fontFamily: 'Monospace' }}
+              >
+                <Grid item>
+                  <Typography
+                    fontWeight={'600'}
+                    variant="h5"
+                    sx={{ mb: '10px' }}
+                  >
+                    Stuff I find cool
+                  </Typography>
+                  <List
+                    disablePadding
+                    sx={{
+                      listStyleType: 'disc',
+                    }}
+                  >
+                    <ListItem
+                      disableGutters
+                      disablePadding
+                      sx={{
+                        display: 'list-item',
+                        mb: '0.5vh',
+                        ml: '1em',
+                      }}
+                    >
+                      GNU is a recursive acronym for "GNU's Not Unix!"
+                    </ListItem>
+                    <ListItem
+                      disableGutters
+                      disablePadding
+                      sx={{
+                        display: 'list-item',
+                        mb: '0.5vh',
+                        ml: '1em',
+                      }}
+                    >
+                      something everyone should see:{' '}
+                      <Link
+                        href={'https://nohello.net/en/'}
+                        target="_blank"
+                        style={{ textDecoration: 'none' }}
+                        sx={{
+                          color: '#2196f3',
+                          '&:hover': {
+                            color: '#0c7cd5',
+                            textDecoration: 'underline',
+                          },
+                          display: 'inline-block',
+                        }}
+                      >
+                        www.nohello.net
+                      </Link>
+                    </ListItem>
+                    <ListItem
+                      disableGutters
+                      disablePadding
+                      sx={{
+                        display: 'list-item',
+                        mb: '0.5vh',
+                        ml: '1em',
+                      }}
+                    >
+                      the relationship between space and time:{' '}
+                      <Link
+                        href={
+                          'https://youtu.be/gtrV-k7FFN8?si=pvdXzguBBxo6zSPQ&t=67'
+                        }
+                        target="_blank"
+                        style={{ textDecoration: 'none' }}
+                        sx={{
+                          color: '#2196f3',
+                          '&:hover': {
+                            color: '#0c7cd5',
+                            textDecoration: 'underline',
+                          },
+                          display: 'inline-block',
+                        }}
+                      >
+                        special relativity
+                      </Link>
+                    </ListItem>
+                  </List>
+
+                  <Typography fontWeight={'600'} variant="h6">
+                    a haikyu:
+                  </Typography>
+                  <Typography sx={{ fontFamily: 'monospace' }}>
+                    Serious error. <br />
+                    All shortcuts have disappeared.
+                    <br />
+                    Screen. Mind. Both are blank.
+                  </Typography>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Fade>
