@@ -17,8 +17,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ../keys:/etc/letsencrypt:ro
-      - ./certbot/www:/var/www/certbot
+      - /var/www/kararizzardi.com/keys:/etc/letsencrypt:ro
+      - /var/www/kararizzardi.com/certbot/www:/var/www/certbot
     depends_on:
       - next-app
 
@@ -26,5 +26,5 @@ services:
     image: certbot/certbot
     container_name: certbot
     volumes:
-      - ./keys:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
+      - /var/www/kararizzardi.com/keys:/etc/letsencrypt
+      - /var/www/kararizzardi.com/certbot/www:/var/www/certbot
