@@ -28,4 +28,3 @@ services:
     volumes:
       - ./keys:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
-    entrypoint: /bin/sh
