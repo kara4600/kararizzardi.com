@@ -42,4 +42,4 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 # Note: Don't expose ports here, Compose will handle that
 
-CMD ["npm", "run", "start"]
+CMD ["node", "server.js"]
