@@ -1,22 +1,32 @@
-version: '3'
+version: '3.8'
 
 services:
   next-app:
-    container_name: next-app
     build:
       context: ./next-app
       dockerfile: prod.Dockerfile
+    container_name: next-app
     restart: always
 
   nginx:
-    container_name: nginx
     build:
       context: ./nginx
       dockerfile: prod.Dockerfile
-    volumes:
-      - ../keys/fullchain.pem:/etc/nginx/fullchain.pem:ro
-      - ../keys/privkey.pem:/etc/nginx/privkey.pem:ro
+    container_name: nginx
     ports:
-      - 80:80
-      - 443:443
-    restart: unless-stopped
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./keys:/etc/letsencrypt
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./certbot/www:/var/www/certbot
+    depends_on:
+      - next-app
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - ./keys:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    entrypoint: /bin/sh
