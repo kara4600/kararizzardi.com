@@ -1,22 +1,30 @@
-version: '3'
+version: '3.8'
 
 services:
   next-app:
-    container_name: next-app
     build:
       context: ./next-app
       dockerfile: prod.Dockerfile
+    container_name: next-app
     restart: always
 
   nginx:
-    container_name: nginx
     build:
       context: ./nginx
       dockerfile: prod.Dockerfile
-    volumes:
-      - ../keys/fullchain.pem:/etc/nginx/fullchain.pem:ro
-      - ../keys/privkey.pem:/etc/nginx/privkey.pem:ro
+    container_name: nginx
     ports:
-      - 80:80
-      - 443:443
-    restart: unless-stopped
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/www/kararizzardi.com/keys:/etc/letsencrypt:ro
+      - /var/www/kararizzardi.com/certbot/www:/var/www/certbot
+    depends_on:
+      - next-app
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - /var/www/kararizzardi.com/keys:/etc/letsencrypt
+      - /var/www/kararizzardi.com/certbot/www:/var/www/certbot

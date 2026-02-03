@@ -1,45 +1,22 @@
-FROM node:18-alpine AS base
-
-# Step 1. Rebuild the source code only when needed
-FROM base AS builder
-
+FROM node:18-alpine AS builder
 WORKDIR /app
 
-# Install dependencies
-COPY package.json package-lock.json* ./
-# Omit --production flag for TypeScript devDependencies
+COPY package.json package-lock.json ./
 RUN npm ci
 
-COPY src ./src
-COPY public ./public
-COPY next.config.js .
-COPY tsconfig.json .
-
-# Uncomment the following line to disable telemetry at build time
-# ENV NEXT_TELEMETRY_DISABLED 1
-
-# Build Next.js
+COPY . .
 RUN npm run build
 
-# Step 2. Production image, copy all the files and run next
-FROM base AS runner
-
+FROM node:18-alpine AS runner
 WORKDIR /app
 
-# Don't run production as root
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-USER nextjs
+ENV NODE_ENV=production
 
+COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
 
-# Automatically leverage output traces to reduce image size
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+EXPOSE 3000
 
-# Uncomment the following line to disable telemetry at run time
-# ENV NEXT_TELEMETRY_DISABLED 1
-
-# Note: Don't expose ports here, Compose will handle that
-
-CMD ["node", "server.js"]
+CMD ["npm", "run", "start"]
